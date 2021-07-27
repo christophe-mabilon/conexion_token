@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1 class="my-3 text-center">{{ 'enregistrer' |trans | upper }}</h1>
+    {{  form_start(formulaireRegister)  }}
+        <div class="form-group">
+    {{ form_row(formulaireRegister.username, {'attr': {'placeholder': 'Votre Username'}})  }}
+        </div>
+        <div class="form-group">
+    {{ form_row(formulaireRegister.password, {'attr': {'placeholder': 'Votre mot de passe'}})  }}
+        </div>
+        <div class="form-group">
+    {{ form_row(formulaireRegister.passwordConfirm, {'attr': {'placeholder': 'Confirmer votre mot de pase'}})  }}
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-info rounded">{{ 'enregistrer' |trans | capitalize }}</button>
+        </div>
+    {{  form_end(formulaireRegister)  }}
+    </div>
+{% endblock %}
